@@ -5,9 +5,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Dmitrii Shcherbakov",
-      "email": "info@bestion.ru",
-      "homepage": "http://bestion.ru",
+      "name": "Ignatiy Cheurin",
+      "email": "info@egnotka.ru",
       "role": "Developer"
     }
   ],
@@ -17,9 +16,9 @@
     }
   },
   "require": {
-    "php": ">=7.0.0",
-    "monolog/monolog": "~2.3",
-    "workerman/workerman": "~3.5",
+    "php": ">=8.2.0",
+    "monolog/monolog": "2.3.*",
+    "workerman/workerman": "4.1.*",
     "ext-json": "*"
   },
   "suggest": {
