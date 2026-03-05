@@ -4,7 +4,7 @@ WebSocket сервер на php (построен на базе Workerman)
 ## Сервер
 1. Установка (рекомендуется устанавливать внутри проекта, чтобы иметь доступ к вашему коду для определения ID пользователя и удобной отправки сообщений клиентам)
     ```shell
-    composer require dimns/websocket-php
+    composer require tracyname/websocket-php
     ```
     \* При установке на `Linux` необходимы php-модули `ext-posix` и `ext-pcntl`
 
@@ -61,7 +61,7 @@ location /websocket {
 ## Клиент
 1. Установка (внутри вашего проекта)
     ```shell
-    npm i dimns-websocket-js
+    npm i tracyname-websocket-js
     ```
 
 2. Подключение
@@ -125,7 +125,7 @@ $user_id = 2;
 $type = 'test_2';
 $sender->send($user_id, $type);
 
-// Одинаковое сообщением нескольким пользователям
+// Одинаковым сообщением нескольким пользователям
 $user_id = [1, 2];
 $type = 'test_12';
 $sender->send($user_id, $type);
