@@ -1,5 +1,5 @@
 {
-  "name": "dimns/websocket-php",
+  "name": "tracyname/websocket-php",
   "description": "WebSocket сервер на php (построен на базе Workerman)",
   "type": "library",
   "license": "MIT",
