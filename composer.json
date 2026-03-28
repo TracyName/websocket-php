@@ -23,7 +23,7 @@
   "require": {
     "php": ">=8.2.0",
     "ext-json": "*",
-    "monolog/monolog": "3.10.*",
+    "monolog/monolog": "2.3.* || 3.10.*",
     "workerman/workerman": "4.2.*"
   },
   "require-dev": {
