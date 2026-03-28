@@ -4,7 +4,6 @@ namespace WebSocketPHP;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\RotatingFileHandler;
-use Monolog\Level;
 use Monolog\Logger;
 
 class Log
@@ -12,7 +11,7 @@ class Log
     public static function create(
         string $log_folder,
         string $channel_name = 'WebSocketPHP',
-        int|Level $log_level = Level::Debug,
+        int $log_level = Logger::DEBUG,
         string $file_name = 'websocket-php.log'
     ): Logger {
         $log_folder = LogFolder::validate($log_folder);
