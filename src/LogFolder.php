@@ -1,38 +1,29 @@
 <?php
-/**
- * Валидация каталога для логов
- *
- * @version 01.03.2019
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- */
 
 namespace WebSocketPHP;
 
-/**
- * Class LogFolder
- *
- * @package WebSocketPHP
- */
+use RuntimeException;
+
 class LogFolder
 {
-    /**
-     * Проверим что есть завершающая косая черта
-     *
-     * @param string $log_folder Каталог для логов
-     *
-     * @return string
-     *
-     * @version 01.03.2019
-     * @author  Дмитрий Щербаков <atomcms@ya.ru>
-     */
-    static function validate($log_folder)
+    public static function validate(string $log_folder): string
     {
-        $last_symbol = substr($log_folder, -1);
+        $log_folder = trim($log_folder);
 
-        if ($last_symbol === '/' OR $last_symbol === '\\') {
-            return $log_folder;
+        if ($log_folder === '') {
+            throw new RuntimeException('Log folder path is empty');
         }
 
-        return $log_folder . DIRECTORY_SEPARATOR;
+        $last_symbol = substr($log_folder, -1);
+
+        if ($last_symbol !== '/' && $last_symbol !== '\\') {
+            $log_folder .= DIRECTORY_SEPARATOR;
+        }
+
+        if (!is_dir($log_folder) && !mkdir($log_folder, 0777, true) && !is_dir($log_folder)) {
+            throw new RuntimeException('Unable to create log folder: ' . $log_folder);
+        }
+
+        return $log_folder;
     }
 }

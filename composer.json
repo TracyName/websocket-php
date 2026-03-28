@@ -15,14 +15,23 @@
       "WebSocketPHP\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "WebSocketPHP\\Tests\\": "tests/"
+    }
+  },
   "require": {
     "php": ">=8.2.0",
-    "monolog/monolog": "2.3.*",
-    "workerman/workerman": "4.1.*",
-    "ext-json": "*"
+    "ext-json": "*",
+    "monolog/monolog": "3.10.*",
+    "workerman/workerman": "4.2.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "10.5.*"
   },
   "suggest": {
-    "ext-posix": "Needed on Linux to access functions: posix_kill() and posix_getpid()",
-    "ext-pcntl": "Needed on Linux to access function: pcntl_fork()"
+    "ext-posix": "Needed on Linux to access signal and process functions",
+    "ext-pcntl": "Needed on Linux to handle signals in long-running worker processes",
+    "ext-event": "Improves Workerman event loop performance"
   }
 }
