@@ -18,13 +18,13 @@ class Log
 
         $log = new Logger($channel_name);
 
-        $filename = $log_folder . $file_name;
-
         $handler = new RotatingFileHandler(
-            $filename,
+            $log_folder . $file_name,
             30,
             $log_level
         );
+
+        $handler->setFilenameFormat('{date}-{filename}', 'Y/m');
 
         $formatter = new LineFormatter(
             "[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n",
