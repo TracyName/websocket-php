@@ -24,7 +24,7 @@ class Log
             $log_level
         );
 
-        $handler->setFilenameFormat('{date}-{filename}', 'Y/m');
+        $handler->setFilenameFormat('{date}-{filename}', 'Y/m/d');
 
         $formatter = new LineFormatter(
             "[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n",
